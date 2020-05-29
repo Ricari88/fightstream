@@ -31,8 +31,9 @@ a{
 }
 .log-buttons{
     grid-area: login;
-    display: flex;
-
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* grid-template-areas: "registro login"; */
 }
 
 .log-buttons .registro{
