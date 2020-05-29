@@ -26,9 +26,12 @@ a{
     justify-items: center;
     color:white;
 }
-
+.logo{
+    grid-area: badge;
+}
 .log-buttons{
     grid-area: login;
+    display: flex;
 
 }
 
