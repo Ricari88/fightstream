@@ -51,8 +51,18 @@ a{
 }
 
 @media screen and (max-width: 700px){
-    .log-buttons .registro{
+    .log-buttons{
+        grid-area: login;
         display: block;
-        margin-bottom: 20px;
+        /* grid-template-rows: 1fr 1fr; */
     }
+
+    .log-buttons .registro{
+        padding:10px;
+        margin: 20px;
+        border-radius: 5px;
+        background-color: #084372;
+        color:white;
+    }
+
 }
