@@ -15,7 +15,7 @@ a{
 
 .banner-container{
     width: 100%;
-    height: 250px;
+    height: 200px;
 
     display: grid;
     grid-template-columns: 25% 50% 25%;
