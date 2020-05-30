@@ -31,6 +31,10 @@ a{
 .logo{
     grid-area: badge;
 }
+
+.titulo{
+    grid-area: title;
+}
 .log-buttons{
     grid-area: login;
     display: grid;
@@ -53,8 +57,8 @@ a{
 @media screen and (max-width: 700px){
     .log-buttons{
         grid-area: login;
-        display: block;
-        /* grid-template-rows: 1fr 1fr; */
+        display: grid;
+        grid-template-rows: [arriba] 50px [abajo] 50px;
     }
 
     .log-buttons .registro{
@@ -63,6 +67,17 @@ a{
         border-radius: 5px;
         background-color: #084372;
         color:white;
+        text-align: center;
+    }
+
+    #registrar{
+        grid-row-start: arriba;
+        grid-row-end: arriba;
+    }
+
+    #login{
+        grid-row-start: abajo;
+        grid-row-end: abajo;
     }
 
 }
