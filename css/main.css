@@ -56,6 +56,10 @@ a{
     background-color: #0e69b1;
 }
 
+.log-buttons .registro:active{
+    background-color: lightblue;
+}
+
 @media screen and (max-width: 700px){
     .log-buttons{
         grid-area: login;
