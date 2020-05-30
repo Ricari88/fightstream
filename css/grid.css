@@ -11,3 +11,7 @@ a{
     cursor: pointer;
 }
 
+.contenedor{
+    display: grid;
+    
+}

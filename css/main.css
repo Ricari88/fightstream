@@ -31,6 +31,11 @@ a{
 .logo{
     grid-area: badge;
 }
+.logo img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
 
 .titulo{
     grid-area: title;
@@ -43,9 +48,11 @@ a{
 }
 
 .log-buttons .registro{
+    height: 100px;
+    
     padding:15px;
     margin-left: 20px;
-    margin-bottom: 40px;
+    /* margin-bottom: 40px; */
     border-radius: 5px;
     background-color: #084372;
     color:white;
