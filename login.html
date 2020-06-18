@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/bootstrap-4.5.0-dist/css/bootstrap-grid.css">
     <link rel="stylesheet" href="css/bootstrap-4.5.0-dist/css/bootstrap.css">
-    <title>Registro</title>
+    <title>Login</title>
 </head>
 <body>
     <!-- inicia pagina -->
@@ -101,8 +101,9 @@
             <main>
                 <h1>Inicio de sesion</h1>
                 <p>Inicia sesión</p>
-                <div class="form">
+                <div class="form" id="form">
                     <!-- incia formulario -->
+                    <form action="login.html" method="POST">
                      <!-- elemento del formulario "Usuario-->
                      <div class="element">
                         <!-- etiqueta de usuario -->
@@ -111,7 +112,7 @@
                             <label for="username">Usuario</label>
                         </div>
                         <div class="element">
-                            <input type="text" name="username" autocomplete="off" placeholder="Usuario">
+                            <input type="text" name="username" autocomplete="off" placeholder="Usuario" required>
                         </div>
                     </div>
                     <!-- termina elemento del formulario -->
@@ -124,7 +125,7 @@
                             <label for="password">Contraseña</label>
                         </div>
                         <div class="element">
-                            <input type="password"  id="password" name="password" autocomplete="off" placeholder="Contraseña">
+                            <input type="password"  id="password" name="password" autocomplete="off" placeholder="Contraseña" required>
                         </div>
                     </div>
                     <!-- termina elemento del formulario -->
@@ -136,8 +137,8 @@
                             <input type="submit" id="submit" class="btn btn-primary" name="registro" value="Registrar">
                         </div>
                     </div>
-                    <!-- termina elemento del formulario -->
-
+                    <!-- termina elemento del formulario -->      
+                </form>
                     <!-- finaliza formulario -->
                 </div>
             </main>
@@ -150,27 +151,47 @@
     <!-- fianliza body -->
     
     </body>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
         let usuario,password
 
         usuario = document.getElementById("username");
         password = document.getElementById("password");
+
+        let passmio = "Salaverga"
        
         let submit = document.getElementById("submit");
 
-        submit.addEventListener("click",function verificar(){
-            //event.preventDefault();
-            let passmio = "Ricari88"
+        $("#submit").click(function(){
+            //hang on event of form with id=myform
+            $("#form").submit(function(e) {
 
-            if(password.value === passmio){
-                alert("ingreso correcto")
-                location.replace("index.html");
-            }
-            else{
-                alert("datos erroneos")
-                location.reload();
-            }
+                //prevent Default functionality
+                e.preventDefault();
+
+                //get the action-url of the form
+                var actionurl = e.currentTarget.action;
+
+                //do your own request an handle the results
+                $.ajax({
+                    url: "login.html",
+                    fetch: 'POST',
+                    //dataType: 'application/json',
+                    data: $("#form").serialize(),
+                    success: function(data) {
+                        alert("lo logre!")
+                        if(password.value === passmio){
+                            alert("ingreso correcto")
+                            location.replace("index.html");
+                        }
+                        else{
+                            alert("datos erroneos")
+                            location.reload();
+                        }
+                    }
+                });
+
+            });
         })
     </script>
 </html>
